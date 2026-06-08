@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Agro Forte, Futuro Sustentável</h1>
+        <p>Concurso de Programação — SENAR-PR & SEED-PR</p>
+        <p><strong>Equilíbrio entre Produção e Meio Ambiente</strong></p>
+    </header>
+
+    <div class="container">
+        
+        <section class="info-section">
+            <h2>Conscientização: O Combate ao Desperdício no Campo</h2>
+            <p>Para garantir o futuro do planeta e a segurança alimentar das próximas gerações, a agricultura moderna precisa produzir mais utilizando menos recursos. O desperdício de água, solo e energia enfraquece o agro e prejudica a biodiversidade.</p>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>💧 Gestão da Água</h3>
+                    <p>A irrigação eficiente, como o gotejamento, evita a evaporação excessiva e o desperdício do recurso mais precioso da Terra, mantendo a planta hidratada na medida certa.</p>
+                </div>
+                <div class="card">
+                    <h3>🌱 Conservação do Solo</h3>
+                    <p>O desperdício de nutrientes por erosão pode ser evitado com o plantio direto e a rotação de culturas, preservando a vida microscópica e a fertilidade da terra.</p>
+                </div>
+                <div class="card">
+                    <h3>☀️ Energia Inteligente</h3>
+                    <p>Aproveitar resíduos orgânicos para gerar biogás e instalar painéis solares nas propriedades reduz o desperdício energético e diminui a pegada de carbono do setor agropecuário.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <h2>Mini-Game: Colheita Sustentável</h2>
+            <p>Use as <strong>setas do teclado (Esquerda / Direita)</strong> ou o <strong>mouse</strong> dentro da caixa para mover a barra de coleta.<br>
+            Pegue os recursos bons (💧 Água e ☀️ Energia) e evite o desperdício (❌)!</p>
+            
+            <div class="game-stats">
+                <div>Pontos: <span id="score">0</span></div>
+                <div>Vidas: <span id="lives">3</span></div>
+            </div>
+
+            <div id="game-canvas">
+                <div id="basket" class="catcher"></div>
+            </div>
+
+            <button class="btn-game" id="start-btn">Iniciar Jogo</button>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Concurso de Programação - Parceria SENAR-PR e SEED-PR. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
