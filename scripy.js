@@ -1,4 +1,3 @@
-// Seleção de elementos do DOM
 const canvas = document.getElementById('game-canvas');
 const basket = document.getElementById('basket');
 const scoreDisplay = document.getElementById('score');
@@ -8,54 +7,67 @@ const startBtn = document.getElementById('start-btn');
 let score = 0;
 let lives = 3;
 let gameActive = false;
-let basketX = 260;
+let basketX = 255;
 let fallingItems = [];
 let gameInterval;
 let spawnInterval;
+let currentSpeed = 4; // Velocidade inicial do jogo
+let spawnRate = 1000; // Tempo inicial de surgimento (ms)
 
-// Evento do botão de iniciar
 startBtn.addEventListener('click', startGame);
 
-// Movimento com o Mouse
+// Controle do Mouse aprimorado com limites precisos
 canvas.addEventListener('mousemove', (e) => {
     if (!gameActive) return;
     const rect = canvas.getBoundingClientRect();
     let relativeX = e.clientX - rect.left;
-    basketX = relativeX - 40; // Centraliza a barra
+    basketX = relativeX - 45; // Centraliza a barra de 90px
     
     if (basketX < 0) basketX = 0;
-    if (basketX > 520) basketX = 520;
+    if (basketX > 510) basketX = 510; // 600px de largura - 90px da barra
     
     basket.style.left = basketX + 'px';
 });
 
-// Movimento com o Teclado
+// Suporte para Teclado
 document.addEventListener('keydown', (e) => {
     if (!gameActive) return;
     if (e.key === 'ArrowLeft' && basketX > 0) {
-        basketX -= 25;
-    } else if (e.key === 'ArrowRight' && basketX < 520) {
-        basketX += 25;
+        basketX -= 30;
+    } else if (e.key === 'ArrowRight' && basketX < 510) {
+        basketX += 30;
     }
     basket.style.left = basketX + 'px';
 });
 
 function startGame() {
-    // Reset do jogo
     score = 0;
     lives = 3;
+    currentSpeed = 4;
     gameActive = true;
+    
     scoreDisplay.textContent = score;
     livesDisplay.textContent = lives;
     startBtn.style.display = 'none';
     
-    // Limpa itens antigos
     fallingItems.forEach(item => item.element.remove());
     fallingItems = [];
 
-    // Loops do jogo (Loop de frames e gerador de itens)
     gameInterval = setInterval(updateGame, 20);
-    spawnInterval = setInterval(spawnItem, 1000);
+    adjustDifficulty(); // Inicia o gerenciador de loops de geração
+}
+
+// Mecanismo de dificuldade adaptativa
+function adjustDifficulty() {
+    clearInterval(spawnInterval);
+    if (!gameActive) return;
+
+    // Conforme o score sobe, diminui o intervalo de spawn
+    let rate = Math.max(400, spawnRate - (Math.floor(score / 50) * 100));
+    
+    spawnInterval = setInterval(() => {
+        spawnItem();
+    }, rate);
 }
 
 function spawnItem() {
@@ -68,12 +80,11 @@ function spawnItem() {
     ];
     
     const choice = types[Math.floor(Math.random() * types.length)];
-    
     const element = document.createElement('div');
     element.className = 'item';
     element.textContent = choice.icon;
     element.style.top = '0px';
-    element.style.left = Math.floor(Math.random() * 570) + 'px';
+    element.style.left = Math.floor(Math.random() * 565) + 'px';
     canvas.appendChild(element);
 
     fallingItems.push({
@@ -84,21 +95,35 @@ function spawnItem() {
     });
 }
 
+function triggerFlash(className) {
+    canvas.classList.add(className);
+    setTimeout(() => {
+        canvas.classList.remove(className);
+    }, 150);
+}
+
 function updateGame() {
+    // Aumenta a velocidade com base nos pontos de forma suave
+    currentSpeed = 4 + Math.floor(score / 60);
+
     for (let i = fallingItems.length - 1; i >= 0; i--) {
         let item = fallingItems[i];
-        item.y += 4; // Velocidade de queda
+        item.y += currentSpeed;
         item.element.style.top = item.y + 'px';
 
-        // Verifica colisão com a barra de coleta
-        if (item.y >= 360 && item.y <= 385) {
-            if (item.x + 30 >= basketX && item.x <= basketX + 80) {
+        // Detecção de colisão precisa
+        if (item.y >= 380 && item.y <= 400) {
+            if (item.x + 35 >= basketX && item.x <= basketX + 90) {
                 if (item.type === 'good') {
                     score += 10;
                     scoreDisplay.textContent = score;
+                    triggerFlash('score-flash');
+                    // Recalcula dificuldade se atingiu novo marco
+                    if (score % 50 === 0) adjustDifficulty();
                 } else {
                     lives--;
                     livesDisplay.textContent = lives;
+                    triggerFlash('hit-flash');
                 }
                 item.element.remove();
                 fallingItems.splice(i, 1);
@@ -107,12 +132,12 @@ function updateGame() {
             }
         }
 
-        // Se passar do fundo sem colidir
-        if (item.y > 400) {
+        // Passou da base (Desperdício)
+        if (item.y > 420) {
             if (item.type === 'good') {
-                // Deixar água ou energia sumir também tira vida (Desperdício)
                 lives--;
                 livesDisplay.textContent = lives;
+                triggerFlash('hit-flash');
             }
             item.element.remove();
             fallingItems.splice(i, 1);
@@ -126,8 +151,11 @@ function checkGameOver() {
         gameActive = false;
         clearInterval(gameInterval);
         clearInterval(spawnInterval);
-        alert(`Fim de Jogo! Boa tentativa! Pontuação Final: ${score} pontos. Continue protegendo nossos recursos!`);
-        startBtn.style.display = 'inline-block';
-        startBtn.textContent = 'Jogar Novamente';
+        
+        setTimeout(() => {
+            alert(`Fim de Jogo! 🌱\nSua pontuação final: ${score} pontos.\nParabéns por apoiar o equilíbrio sustentável do nosso ecossistema agropecuário!`);
+            startBtn.style.display = 'inline-block';
+            startBtn.textContent = 'Jogar Novamente';
+        }, 200);
     }
 }
