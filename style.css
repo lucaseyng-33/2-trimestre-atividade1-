@@ -1,293 +1,272 @@
-/* Variáveis de Design Avançado */
+/* Design System Premium */
 :root {
     --primary-color: #1b4332;
     --secondary-color: #2d6a4f;
-    --accent-color: #52b788;
-    --light-accent: #d8f3dc;
+    --accent-light: #52b788;
+    --neon-green: #74c69d;
     --bg-color: #f4f9f4;
     --card-bg: #ffffff;
-    --text-color: #2d3748;
-    --danger-color: #d90429;
-    --radius: 16px;
-    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Modo Escuro / Eco Alternativo */
-body.dark-eco {
-    --bg-color: #121814;
-    --card-bg: #1e2621;
-    --text-color: #e2e8f0;
-    --primary-color: #52b788;
-    --secondary-color: #74c69d;
+    --text-main: #2d3748;
+    --text-muted: #718096;
+    --danger-zone: #d90429;
+    --gold: #ffb703;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color: var(--text-main);
     line-height: 1.6;
-    transition: background-color 0.5s ease;
 }
 
-/* Botão de Tema */
-.theme-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background: var(--card-bg);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-.theme-btn:hover { transform: scale(1.1) rotate(15deg); }
-
-/* Cabeçalho de Impacto Visual */
+/* Header de Alto Padrão Visual */
 header {
-    background: linear-gradient(135deg, #0f2419 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 80px 20px;
     text-align: center;
     position: relative;
+    box-shadow: 0 10px 30px rgba(27, 67, 50, 0.2);
     overflow: hidden;
 }
 
-.logo-space {
-    font-size: 3rem;
-    animation: float 3s ease-in-out infinite;
+.header-container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.header-container h1 {
-    font-size: 3rem;
+.logos-placeholder {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--neon-green);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 3.2rem;
     font-weight: 800;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    margin: 10px 0;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .subtitle {
     font-size: 1.3rem;
+    color: #d8f3dc;
     font-weight: 300;
-    opacity: 0.9;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .badge {
     display: inline-block;
     background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 8px 24px;
+    padding: 8px 20px;
     border-radius: 30px;
+    font-size: 0.95rem;
     font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(8px);
 }
 
-/* Layout Container */
+/* Estrutura de Layout */
 .container {
-    max-width: 1140px;
-    margin: -30px auto 60px;
-    padding: 0 20px;
-    position: relative;
-    z-index: 10;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 25px;
 }
 
-/* Seção de Conscientização Avançada */
+/* Seções Acadêmicas */
 .info-section {
     background: var(--card-bg);
-    padding: 40px;
-    border-radius: var(--radius);
+    padding: 50px;
+    border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-    margin-bottom: 40px;
-    transition: background-color 0.5s ease;
+    margin-bottom: 50px;
 }
 
-.info-section h2 {
+.section-title-box {
+    margin-bottom: 30px;
+}
+
+.section-title-box h2 {
     color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.section-title-box .line {
+    width: 80px;
+    height: 5px;
+    background: var(--accent-light);
+    margin-top: 10px;
+    border-radius: 10px;
 }
 
 .intro-text {
-    color: #718096;
-    margin-bottom: 35px;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 950px;
 }
 
-/* Cards Interativos Expandíveis (Hover) */
+/* Grid Dinâmico de Cards */
 .grid-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .card {
-    background: var(--bg-color);
-    padding: 30px;
-    border-radius: var(--radius);
-    border: 1px solid rgba(0,0,0,0.03);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: var(--transition);
+    background: #f8fbf9;
+    border-left: 5px solid var(--accent-light);
+    padding: 35px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    background: var(--card-bg);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 30px rgba(45, 106, 79, 0.08);
+    background: #ffffff;
 }
 
-.card[data-eco="agua"] { border-top: 5px solid #3a86ff; }
-.card[data-eco="solo"] { border-top: 5px solid #38b000; }
-.card[data-eco="energia"] { border-top: 5px solid #ffb703; }
-
-.card-icon-wrapper {
-    width: 60px;
-    height: 60px;
-    background: var(--card-bg);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+.card-icon {
+    font-size: 2.5rem;
     margin-bottom: 15px;
 }
-
-.card-icon { font-size: 2rem; }
 
 .card h3 {
-    margin-bottom: 10px;
-    color: var(--text-color);
-}
-
-/* Efeito revelação de texto */
-.expanded-content {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: var(--transition);
-    color: #4a5568;
-    font-size: 0.95rem;
-    margin-top: 0;
-}
-
-body.dark-eco .expanded-content { color: #cbd5e1; }
-
-.card:hover .expanded-content {
-    max-height: 120px;
-    opacity: 1;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px dashed rgba(0,0,0,0.1);
-}
-
-/* Área do Jogo */
-.game-section {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: var(--radius);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-    text-align: center;
-    transition: background-color 0.5s ease;
-}
-
-.section-title-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+    color: var(--primary-color);
+    font-size: 1.4rem;
     margin-bottom: 15px;
 }
 
-.game-indicator {
-    background: #edf2f7;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: 700;
+.card p {
     color: #4a5568;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-.game-stats {
+.card-fact {
+    font-size: 0.85rem;
+    background: #e8f5e9;
+    color: var(--secondary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+/* Bloco Profundo Extra */
+.deep-study-box {
+    margin-top: 40px;
+    background: linear-gradient(to right, #edf4f0, #e8f5e9);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #c8e6c9;
+}
+
+.deep-study-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Área de Simulação de Game Engine */
+.game-section {
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+    text-align: center;
+}
+
+.game-instruction {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Dashboard Estilo Arcade Moderno */
+.game-dashboard {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
     margin-bottom: 25px;
 }
 
-.stat-box {
-    background: var(--bg-color);
+.dash-box {
+    background: #111827;
+    color: #f3f4f6;
     padding: 12px 25px;
-    border-radius: 12px;
-    font-weight: 800;
-    font-size: 1.3rem;
-    border: 2px solid transparent;
-    transition: var(--transition);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    min-width: 160px;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.1);
+    border: 1px solid #374151;
 }
 
-/* Animações de impacto nos scores */
-.pop-effect {
-    animation: pop 0.3s ease;
-    border-color: var(--accent-color);
-}
-.danger-effect {
-    animation: pop 0.3s ease;
-    border-color: var(--danger-color);
-    color: var(--danger-color);
+.dash-box span {
+    color: var(--neon-green);
 }
 
-/* Tela de Jogo Estilizada */
+/* Arena Gráfica do Jogo */
 #game-canvas {
     width: 100%;
-    max-width: 650px;
-    height: 440px;
-    background: linear-gradient(to bottom, #7ac1eb 0%, #bfe3f7 100%);
-    border: 6px solid var(--primary-color);
+    max-width: 700px;
+    height: 450px;
+    background: linear-gradient(to bottom, #1e3a8a 0%, #3b82f6 40%, #93c5fd 100%);
+    border: 8px solid var(--primary-color);
     border-radius: 20px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     cursor: none;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* Nuvens decorativas de fundo */
-.sky-cloud {
-    background: rgba(255,255,255,0.6);
-    position: absolute;
-    border-radius: 20px;
-}
-.sky-cloud.c1 { width: 80px; height: 30px; top: 40px; left: 10%; animation: floatCloud 20s linear infinite; }
-.sky-cloud.c2 { width: 120px; height: 40px; top: 100px; right: 15%; animation: floatCloud 28s linear infinite reverse; }
+/* Efeitos de Flash de Engine */
+#game-canvas.hit-flash { background: #dc2626 !important; }
+#game-canvas.score-flash { background: #16a34a !important; }
 
-/* Coletor Estilizado como Cesto de Palha */
+/* Coletor Customizado */
 .catcher {
-    width: 100px;
+    width: 90px;
     height: 25px;
-    background: #8c6239;
-    border-radius: 4px 4px 12px 12px;
+    background: linear-gradient(to bottom, #78350f, #451a03);
+    border-radius: 8px;
     position: absolute;
     bottom: 15px;
-    left: 275px;
+    left: 305px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    border: 2px solid #b45309;
+    transition: width 0.3s ease;
 }
 
-.basket-texture {
-    width: 100%;
-    height: 100%;
-    opacity: 0.2;
-    background: repeating-linear-gradient(45deg, #000, #000 4px, transparent 4px, transparent 8px);
+.basket-led {
+    width: 60%;
+    height: 4px;
+    background: var(--neon-green);
+    margin: 2px auto 0;
+    border-radius: 10px;
+    box-shadow: 0 0 8px var(--neon-green);
 }
 
+/* Itens Cadentes */
 .item {
     width: 40px;
     height: 40px;
@@ -296,52 +275,85 @@ body.dark-eco .expanded-content { color: #cbd5e1; }
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
-    transition: transform 0.1s linear;
+    user-select: none;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
 }
 
-/* Botão Moderno */
+/* Loja de Upgrades (Mecânica Adicional) */
+.shop-container {
+    max-width: 700px;
+    margin: 35px auto 0;
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.shop-container h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.shop-item {
+    background: white;
+    border: 2px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.shop-item:not([disabled]):hover {
+    border-color: var(--secondary-color);
+    background: #f0fdf4;
+    transform: translateY(-2px);
+}
+
+.shop-item disabled, .shop-item[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.shop-item strong { color: var(--text-main); font-size: 0.95rem; }
+.shop-item span { color: var(--text-muted); font-size: 0.8rem; margin-top: 4px; }
+
+/* Botão Central de Ação */
 .btn-game {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     color: white;
     border: none;
-    padding: 16px 45px;
-    font-size: 1.1rem;
+    padding: 16px 50px;
+    font-size: 1.2rem;
     font-weight: 700;
     border-radius: 40px;
     cursor: pointer;
     margin-top: 30px;
-    box-shadow: 0 6px 20px rgba(45, 106, 79, 0.3);
-    transition: var(--transition);
+    box-shadow: 0 10px 25px rgba(45, 106, 79, 0.4);
+    transition: all 0.2s ease;
 }
 
 .btn-game:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(45, 106, 79, 0.4);
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(45, 106, 79, 0.5);
 }
 
-/* Animações Keyframes */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-@keyframes floatCloud {
-    0% { transform: translateX(-100px); }
-    100% { transform: translateX(750px); }
-}
-
-@keyframes pop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-    100% { transform: scale(1); }
-}
-
-/* Rodapé */
+/* Footer Fino */
 footer {
-    background-color: #0f2419;
-    color: rgba(255,255,255,0.7);
+    background-color: var(--primary-color);
+    color: #e8f5e9;
     text-align: center;
-    padding: 30px 20px;
+    padding: 35px 20px;
+    margin-top: 80px;
     font-size: 0.95rem;
+    border-top: 4px solid var(--accent-light);
 }

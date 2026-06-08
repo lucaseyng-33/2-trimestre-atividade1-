@@ -3,93 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte, Futuro Sustentável</title>
+    <title>Agro Forte, Futuro Sustentável - SENAR-PR & SEED-PR</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <button id="theme-toggle" class="theme-btn" title="Alternar Modo Eco">🌱</button>
-
     <header>
         <div class="header-container">
-            <div class="logo-space">🚜🌾</div>
+            <div class="logos-placeholder">Concurso de Programação 2026</div>
             <h1>Agro Forte, Futuro Sustentável</h1>
-            <p class="subtitle">Concurso de Programação — SENAR-PR & SEED-PR</p>
-            <div class="badge">Equilíbrio entre Produção e Meio Ambiente</div>
+            <p class="subtitle">O Equilíbrio Essencial entre a Produtividade do Campo e a Preservação Ambiental</p>
+            <div class="badge">Parceria Acadêmica: SENAR-PR & SEED-PR</div>
         </div>
     </header>
 
     <main class="container">
         
         <section class="info-section">
-            <h2>Conscientização: O Combate ao Desperdício no Campo</h2>
-            <p class="intro-text">Passe o mouse sobre os cards para descobrir estratégias fundamentais de preservação do nosso ecossistema.</p>
+            <div class="section-title-box">
+                <h2>O Grande Desafio do Século XXI: Produzir sem Esgotar</h2>
+                <div class="line"></div>
+            </div>
+            
+            <p class="intro-text">
+                A agricultura é a espinha dorsal da economia paranaense e do abastecimento global. No entanto, o avanço tecnológico exige uma nova postura: a **sustentabilidade ativa**. O verdadeiro equilíbrio não está em parar de produzir, mas em otimizar cada gota de água, cada porção de solo e cada watt de energia, eliminando o desperdício através da tecnologia aplicada.
+            </p>
             
             <div class="grid-cards">
-                <div class="card" data-eco="agua">
-                    <div class="card-icon-wrapper">
-                        <span class="card-icon">💧</span>
-                    </div>
-                    <h3>Gestão da Água</h3>
-                    <p class="short-desc">A irrigação eficiente, como o gotejamento, evita a evaporação excessiva...</p>
-                    <div class="expanded-content">
-                        <p>Além disso, o uso de sensores de umidade no solo ajuda a aplicar a água apenas quando necessário, economizando até 40% de recursos hídricos.</p>
-                    </div>
+                <div class="card">
+                    <div class="card-icon">💧</div>
+                    <h3>Eficiência Hídrica e Pegada de Água</h3>
+                    <p>O desperdício de água na agricultura muitas vezes ocorre por sistemas de irrigação desregulados ou turnos de rega em horários de sol pleno, causando evaporação imediata. Tecnologias como o gotejamento subterrâneo e sensores de umidade de solo garantem que a planta receba exatamente o necessário, preservando os lençóis freáticos e os rios do Paraná.</p>
+                    <span class="card-fact">Fato: A irrigação inteligente reduz em até 50% o consumo de água no campo.</span>
                 </div>
 
-                <div class="card" data-eco="solo">
-                    <div class="card-icon-wrapper">
-                        <span class="card-icon">🌱</span>
-                    </div>
-                    <h3>Conservação do Solo</h3>
-                    <p class="short-desc">O desperdício de nutrientes por erosão pode ser evitado com o plantio direto...</p>
-                    <div class="expanded-content">
-                        <p>Manter a palhada sobre a terra protege contra o impacto da chuva, reduz a temperatura do solo e aumenta o sequestro de carbono.</p>
-                    </div>
+                <div class="card">
+                    <h3>🌱 Manejo Conservacionista do Solo</h3>
+                    <p>O solo não é apenas terra; é um ecossistema vivo. O desperdício se dá quando permitimos que as chuvas carreguem a camada fértil por falta de cobertura. O Sistema de Plantio Direto (SPD), pioneiro na nossa região, a rotação de culturas e o cultivo em curvas de nível evitam a erosão, mantendo a matéria orgânica aprisionada e o solo altamente produtivo.</p>
+                    <span class="card-fact">Fato: Solos bem manejados retêm mais água e diminuem a necessidade de fertilizantes químicos.</span>
                 </div>
 
-                <div class="card" data-eco="energia">
-                    <div class="card-icon-wrapper">
-                        <span class="card-icon">☀️</span>
-                    </div>
-                    <h3>Energia Inteligente</h3>
-                    <p class="short-desc">Aproveitar resíduos orgânicos para gerar biogás e instalar painéis solares...</p>
-                    <div class="expanded-content">
-                        <p>A transformação de dejetos de animais em biofertilizante e energia limpa fecha o ciclo da economia circular na fazenda.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="game-section">
-            <div class="section-title-wrapper">
-                <h2>Mini-Game: Colheita Sustentável</h2>
-                <div class="game-indicator" id="game-status-tag">Aguardando Início</div>
-            </div>
-            <p class="game-instruction">Mova o coletor com o <strong>mouse</strong> ou <strong>setas direcionais</strong>. Não deixe os recursos caírem!</p>
-            
-            <div class="game-stats">
-                <div class="stat-box" id="box-score">Pontos: <span id="score">0</span></div>
-                <div class="stat-box" id="box-lives">Vidas: <span id="lives">3</span></div>
-            </div>
-
-            <div id="game-canvas">
-                <div class="sky-cloud c1"></div>
-                <div class="sky-cloud c2"></div>
-                <div id="basket" class="catcher">
-                    <div class="basket-texture"></div>
+                <div class="card">
+                    <h3>☀️ Transição Energética e Descarbonização</h3>
+                    <p>O uso indiscriminado de combustíveis fósseis em maquinários e galpões gera perdas financeiras e ambientais. A integração da biomassa, do biogás oriundo de dejetos animais (suinocultura e bovinocultura) e da energia fotovoltaica transforma o que seria desperdício ou poluente em autonomia elétrica para as propriedades rurais.</p>
+                    <span class="card-fact">Fato: O Paraná é referência nacional na transformação de biomassa em energia limpa.</span>
                 </div>
             </div>
 
-            <button class="btn-game" id="start-btn">Iniciar Colheita</button>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Concurso de Programação - Parceria SENAR-PR e SEED-PR. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+            <div class="deep-study-box">
+                <h3>O Papel da Tecnologia na Redução de Perdas</h3>
+                <p>A inteligência artificial, o monitoramento por drones e a internet das coisas (IoT) atuam diretamente na detecção precoce de pragas e na aplicação em taxa variável de insumos. Isso significa que o agricultor moderno não aplica recursos
