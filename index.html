@@ -8,8 +8,11 @@
 </head>
 <body>
 
+    <button id="theme-toggle" class="theme-btn" title="Alternar Modo Eco">🌱</button>
+
     <header>
         <div class="header-container">
+            <div class="logo-space">🚜🌾</div>
             <h1>Agro Forte, Futuro Sustentável</h1>
             <p class="subtitle">Concurso de Programação — SENAR-PR & SEED-PR</p>
             <div class="badge">Equilíbrio entre Produção e Meio Ambiente</div>
@@ -20,39 +23,62 @@
         
         <section class="info-section">
             <h2>Conscientização: O Combate ao Desperdício no Campo</h2>
-            <p class="intro-text">Para garantir o futuro do planeta e a segurança alimentar das próximas gerações, a agricultura moderna precisa produzir mais utilizando menos recursos. O desperdício de água, solo e energia enfraquece o agro e prejudica a biodiversidade.</p>
+            <p class="intro-text">Passe o mouse sobre os cards para descobrir estratégias fundamentais de preservação do nosso ecossistema.</p>
             
             <div class="grid-cards">
-                <div class="card">
-                    <div class="card-icon">💧</div>
+                <div class="card" data-eco="agua">
+                    <div class="card-icon-wrapper">
+                        <span class="card-icon">💧</span>
+                    </div>
                     <h3>Gestão da Água</h3>
-                    <p>A irrigação eficiente, como o gotejamento, evita a evaporação excessiva e o desperdício do recurso mais precioso da Terra, mantendo a planta hidratada na medida certa.</p>
+                    <p class="short-desc">A irrigação eficiente, como o gotejamento, evita a evaporação excessiva...</p>
+                    <div class="expanded-content">
+                        <p>Além disso, o uso de sensores de umidade no solo ajuda a aplicar a água apenas quando necessário, economizando até 40% de recursos hídricos.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🌱</div>
+
+                <div class="card" data-eco="solo">
+                    <div class="card-icon-wrapper">
+                        <span class="card-icon">🌱</span>
+                    </div>
                     <h3>Conservação do Solo</h3>
-                    <p>O desperdício de nutrientes por erosão pode ser evitado com o plantio direto e a rotação de culturas, preservando a vida microscópica e a fertilidade da terra.</p>
+                    <p class="short-desc">O desperdício de nutrientes por erosão pode ser evitado com o plantio direto...</p>
+                    <div class="expanded-content">
+                        <p>Manter a palhada sobre a terra protege contra o impacto da chuva, reduz a temperatura do solo e aumenta o sequestro de carbono.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">☀️</div>
+
+                <div class="card" data-eco="energia">
+                    <div class="card-icon-wrapper">
+                        <span class="card-icon">☀️</span>
+                    </div>
                     <h3>Energia Inteligente</h3>
-                    <p>Aproveitar resíduos orgânicos para gerar biogás e instalar painéis solares nas propriedades reduz o desperdício energético e diminui a pegada de carbono do setor agropecuário.</p>
+                    <p class="short-desc">Aproveitar resíduos orgânicos para gerar biogás e instalar painéis solares...</p>
+                    <div class="expanded-content">
+                        <p>A transformação de dejetos de animais em biofertilizante e energia limpa fecha o ciclo da economia circular na fazenda.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="game-section">
-            <h2>Mini-Game: Colheita Sustentável</h2>
-            <p class="game-instruction">Use o <strong>mouse</strong> ou as <strong>setas do teclado</strong> para mover a barra.<br>
-            Colete os recursos essenciais e evite o desperdício (❌)!</p>
+            <div class="section-title-wrapper">
+                <h2>Mini-Game: Colheita Sustentável</h2>
+                <div class="game-indicator" id="game-status-tag">Aguardando Início</div>
+            </div>
+            <p class="game-instruction">Mova o coletor com o <strong>mouse</strong> ou <strong>setas direcionais</strong>. Não deixe os recursos caírem!</p>
             
             <div class="game-stats">
-                <div class="stat-box">Pontos: <span id="score">0</span></div>
-                <div class="stat-box">Vidas: <span id="lives">3</span></div>
+                <div class="stat-box" id="box-score">Pontos: <span id="score">0</span></div>
+                <div class="stat-box" id="box-lives">Vidas: <span id="lives">3</span></div>
             </div>
 
             <div id="game-canvas">
-                <div id="basket" class="catcher"></div>
+                <div class="sky-cloud c1"></div>
+                <div class="sky-cloud c2"></div>
+                <div id="basket" class="catcher">
+                    <div class="basket-texture"></div>
+                </div>
             </div>
 
             <button class="btn-game" id="start-btn">Iniciar Colheita</button>
