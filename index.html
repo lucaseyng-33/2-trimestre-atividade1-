@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal do Estudante - Eleve Seu Poder Contra o Preconceito</title>
+  <title>Portal do Estudante - Kame Apoio Super Saiyajin</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,8 +16,11 @@
       <ul>
         <li><a href="#inicio">Início</a></li>
         <li><a href="#combate">Combate aos Preconceitos</a></li>
-        <li><a href="#genki-dama">Genki Dama Coletiva</a></li>
+        <li><a href="#escuta">Portal de Escuta</a></li>
+        <li><a href="#quiz">Quiz do Conhecimento</a></li>
+        <li><a href="#genki-dama">Genki Dama</a></li>
         <li><a href="#ajuda">Canais de Apoio</a></li>
+        <li><a href="#fontes">Fontes & Referências</a></li>
       </ul>
     </nav>
   </header>
@@ -25,34 +28,109 @@
   <section id="inicio" class="hero">
     <div class="hero-content">
       <h2>SUPERAR LIMITES, UNIR FORÇAS!</h2>
-      <p>Um espaço de acolhimento, empatia e respeito. Aqui, o preconceito não tem vez!</p>
-      <a href="#combate" class="btn-ki">Elevar Meu Ki</a>
+      <p>Um ambiente virtual de acolhimento, empatia e respeito. Eleve o seu poder para combater o preconceito!</p>
+      <a href="#escuta" class="btn-ki">Acessar Portal de Escuta</a>
     </div>
   </section>
 
   <section id="combate" class="cards-section">
     <h2>Nossa Luta Diária</h2>
-    <p class="subtitle">Assim como um guerreiro protege os fracos, usamos nossa voz contra a injustiça.</p>
+    <p class="subtitle">Assim como um verdadeiro guerreiro protege quem precisa, usamos nossa voz contra a injustiça.</p>
     
     <div class="grid-cards">
       <div class="card">
         <h3>Contra o Bullying</h3>
-        <p>A verdadeira força está em proteger o próximo, não em diminuí-lo. O respeito constrói laços inquebráveis.</p>
+        <p>A verdadeira força está em proteger o próximo, nunca em diminuí-lo. O respeito constrói laços inquebráveis.</p>
       </div>
       <div class="card">
-        <h3>Contra o Racismo</h3>
-        <p>Diferenças nos tornam únicos e fortes. A diversidade é a verdadeira essência da nossa evolução.</p>
+        <h3>Contra o Racismo e Discriminação</h3>
+        <p>Nossas diferenças nos tornam únicos e fortes. A diversidade é a essência da nossa evolução como sociedade.</p>
       </div>
       <div class="card">
         <h3>Empatia e Acolhimento</h3>
-        <p>Escutar sem julgar. Todo estudante merece um ambiente seguro para aprender e crescer.</p>
+        <p>Saber ouvir sem julgar. Todo estudante tem o direito de ter um ambiente escolar seguro e acolhedor.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="escuta" class="escuta-section">
+    <h2>🛡️ Portal de Escuta & Desabafo</h2>
+    <p class="subtitle">Coloque para fora o que está pesando no seu coração. Este é um espaço seguro e simbólico.</p>
+
+    <div class="quotes-container">
+      <blockquote class="motivational-quote">
+        "Até mesmo o guerreiro mais forte precisa descansar e pedir ajuda. Você não precisa carregar tudo sozinho!"
+      </blockquote>
+    </div>
+
+    <div class="form-container">
+      <form id="ventForm">
+        <label for="ventText">Escreva o seu desabafo:</label>
+        <textarea id="ventText" rows="5" placeholder="Digite aqui o que você está sentindo... (Simulação: nenhuma informação é armazenada)." required></textarea>
+        <button type="submit" class="btn-ki">Enviar Desabafo 💬</button>
+      </form>
+
+      <div id="responseBox" class="response-box hidden"></div>
+    </div>
+
+    <div class="guidelines-box">
+      <h3>🤝 Quem procurar quando precisar de ajuda real?</h3>
+      <p>Escrever ajuda a aliviar, mas conversar com alguém de confiança faz toda a diferença. Procure sempre:</p>
+      <ul>
+        <li><strong>Professores e Pedagogos:</strong> Estão preparados para te ouvir com respeito, empatia e sigilo.</li>
+        <li><strong>Direção e Equipe Escolar:</strong> Podem intervir diretamente em casos de bullying, ameaças ou preconceito.</li>
+        <li><strong>Família ou Adulto de Confiança:</strong> Compartilhe seus sentimentos com quem cuida e torce por você.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="quiz" class="quiz-section">
+    <h2>⚡ Quiz do Respeito & Cidadania</h2>
+    <p class="subtitle">Teste seus conhecimentos com 5 perguntas sobre convivência e segurança!</p>
+
+    <div class="quiz-container">
+      <form id="quizForm">
+        
+        <div class="quiz-card">
+          <p class="quiz-question">1. Um colega é constantemente apelidado de forma maldosa e excluído do grupo. Isso é bullying?</p>
+          <label><input type="radio" name="q1" value="A" required> Sim, agressões e exclusão frequentes caracterizam bullying.</label><br>
+          <label><input type="radio" name="q1" value="B"> Não, é apenas uma brincadeira comum entre estudantes.</label>
+        </div>
+
+        <div class="quiz-card">
+          <p class="quiz-question">2. Qual dessas atitudes demonstra respeito no ambiente escolar?</p>
+          <label><input type="radio" name="q2" value="A" required> Rir das dificuldades de fala ou aprendizado de um colega.</label><br>
+          <label><input type="radio" name="q2" value="B"> Escutar com atenção a opinião de um colega, mesmo discordando.</label>
+        </div>
+
+        <div class="quiz-card">
+          <p class="quiz-question">3. Como agir ao testemunhar uma situação de preconceito ou discriminação na escola?</p>
+          <label><input type="radio" name="q3" value="A" required> Apoiar a vítima e avisar imediatamente um professor ou pedagogo.</label><br>
+          <label><input type="radio" name="q3" value="B"> Gravar um vídeo para as redes sociais e não avisar nenhum adulto.</label>
+        </div>
+
+        <div class="quiz-card">
+          <p class="quiz-question">4. Qual destas opções é considerada uma senha segura para proteger suas contas virtuais?</p>
+          <label><input type="radio" name="q4" value="A" required> 123456 ou sua data de nascimento.</label><br>
+          <label><input type="radio" name="q4" value="B"> K@me#89!Goku (combinação de letras maiúsculas, minúsculas, números e símbolos).</label>
+        </div>
+
+        <div class="quiz-card">
+          <p class="quiz-question">5. O que você faria se estivesse se sentindo muito sobrecarregado ou triste na escola?</p>
+          <label><input type="radio" name="q5" value="A" required> Guardaria tudo para mim sem falar com ninguém.</label><br>
+          <label><input type="radio" name="q5" value="B"> Procuraria um amigo, pedagogo ou familiar de confiança para conversar.</label>
+        </div>
+
+        <button type="submit" class="btn-ki">Verificar Minha Pontuação 🎯</button>
+      </form>
+
+      <div id="quizResult" class="quiz-result hidden"></div>
     </div>
   </section>
 
   <section id="genki-dama" class="interactive-section">
     <h2>Envie sua Energia Acolhedora</h2>
-    <p>Clique no botão abaixo para enviar sua energia positiva para a Genki Dama do Acolhimento!</p>
+    <p>Clique no botão para enviar sua energia positiva para a Genki Dama do Acolhimento!</p>
     
     <div class="aura-container">
       <div class="energy-ball" id="energyBall">0</div>
@@ -64,12 +142,47 @@
 
   <section id="ajuda" class="support-section">
     <h2>Precisa de Ajuda ou Orientação?</h2>
-    <p>Você nunca está sozinho. Procure a orientação pedagógica da escola ou acesse canais oficiais:</p>
+    <p>Você nunca está sozinho. Procure a orientação da escola ou acesse canais oficiais:</p>
     <ul>
-      <li><strong>CVV (Centro de Valorização da Vida):</strong> Ligue 188</li>
-      <li><strong>Direitos Humanos:</strong> Ligue 100</li>
-      <li><strong>Grêmio Estudantil / Orientação Escolar:</strong> Procure a coordenação na sua escola.</li>
+      <li><strong>CVV (Centro de Valorização da Vida):</strong> Ligue 188 ou acesse <a href="https://www.cvv.org.br" target="_blank" rel="noopener">cvv.org.br</a></li>
+      <li><strong>Disque 100 (Direitos Humanos):</strong> Canal oficial para denúncias de violações de direitos.</li>
+      <li><strong>Grêmio Estudantil / Orientação Escolar:</strong> Procure a coordenação na sua instituição.</li>
     </ul>
+  </section>
+
+  <section id="fontes" class="sources-section">
+    <h2>Fontes e Materiais de Consulta</h2>
+    <p class="subtitle">Informações fundamentadas em dados oficiais e materiais educativos confiáveis:</p>
+    
+    <div class="sources-grid">
+      <div class="source-card">
+        <span class="tag-source">Governamental</span>
+        <h3>Ministério da Educação (MEC)</h3>
+        <p>Orientações e programas de prevenção do bullying e promoção do respeito no ambiente escolar.</p>
+        <a href="https://www.gov.br/mec" target="_blank" rel="noopener">Acessar Portal do MEC &rarr;</a>
+      </div>
+
+      <div class="source-card">
+        <span class="tag-source">Organização de Saúde</span>
+        <h3>Organização Pan-Americana da Saúde (OPAS / OMS)</h3>
+        <p>Diretrizes para a promoção da saúde mental e prevenção da violência em crianças e adolescentes.</p>
+        <a href="https://www.paho.org/pt" target="_blank" rel="noopener">Acessar Portal da OPAS &rarr;</a>
+      </div>
+
+      <div class="source-card">
+        <span class="tag-source">Cartilha Educativa</span>
+        <h3>Cartilha de Prevenção ao Bullying - CNJ</h3>
+        <p>Material educativo elaborado pelo Conselho Nacional de Justiça sobre convivência pacífica.</p>
+        <a href="https://www.cnj.jus.br" target="_blank" rel="noopener">Acessar Portal CNJ &rarr;</a>
+      </div>
+
+      <div class="source-card">
+        <span class="tag-source">Instituição de Ensino</span>
+        <h3>Portal Fiocruz / Canal Saúde</h3>
+        <p>Artigos e publicações sobre saúde mental dos jovens e combate ao preconceito.</p>
+        <a href="https://portal.fiocruz.br" target="_blank" rel="noopener">Acessar Portal Fiocruz &rarr;</a>
+      </div>
+    </div>
   </section>
 
   <footer>

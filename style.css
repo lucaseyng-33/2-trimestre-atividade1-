@@ -1,6 +1,8 @@
-/* Palette do Goku Super Saiyajin: 
-   Laranja Gi (#FF6600), Azul Faixa/Camisa (#003399 / #0088FF), 
-   Amarelo/Dourado Super Saiyajin (#FFD700) 
+/* Paleta do Goku Super Saiyajin:
+   - Laranja Gi: #FF6600
+   - Azul Faixa/Kame: #003399 / #0088FF
+   - Dourado Super Saiyajin: #FFD700
+   - Fundo Escuro: #0b0c10 / #12131c
 */
 
 * {
@@ -22,7 +24,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
   border-bottom: 4px solid #FF6600;
   position: sticky;
   top: 0;
@@ -42,13 +44,14 @@ header {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 nav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.95rem;
   transition: color 0.3s;
 }
 
@@ -98,7 +101,7 @@ nav a:hover {
   background-color: #e65c00;
 }
 
-/* Cards Section */
+/* Seção de Cards */
 .cards-section {
   padding: 4rem 2rem;
   max-width: 1200px;
@@ -106,7 +109,7 @@ nav a:hover {
   text-align: center;
 }
 
-.cards-section h2 {
+.cards-section h2, .escuta-section h2, .quiz-section h2 {
   color: #FF6600;
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
@@ -142,7 +145,151 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
-/* Interactive Section */
+/* Portal de Escuta */
+.escuta-section {
+  background-color: #12131c;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 2px solid #FF6600;
+  border-bottom: 2px solid #FF6600;
+}
+
+.quotes-container {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.motivational-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #FFD700;
+  background-color: rgba(255, 102, 0, 0.1);
+  border-left: 4px solid #FFD700;
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  text-align: left;
+  background-color: #1a1a24;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #0055ff;
+}
+
+.form-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.form-container textarea {
+  width: 100%;
+  padding: 1rem;
+  background-color: #0b0c10;
+  border: 1px solid #0055ff;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+.form-container textarea:focus {
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.response-box {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  background-color: rgba(0, 136, 255, 0.15);
+  border: 1px solid #0088FF;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.guidelines-box {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #1a1a24;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 5px solid #FFD700;
+}
+
+.guidelines-box h3 {
+  color: #FFD700;
+  margin-bottom: 1rem;
+}
+
+.guidelines-box ul {
+  list-style: none;
+}
+
+.guidelines-box li {
+  margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  border-left: 3px solid #FF6600;
+}
+
+/* Quiz Section */
+.quiz-section {
+  padding: 4rem 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quiz-container {
+  text-align: left;
+}
+
+.quiz-card {
+  background-color: #1a1a24;
+  border: 1px solid #0055ff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-question {
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.quiz-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.quiz-result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #001f54;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Genki Dama Interativa */
 .interactive-section {
   background-color: #12131c;
   padding: 4rem 2rem;
@@ -203,6 +350,82 @@ nav a:hover {
   padding: 1rem;
   border-left: 4px solid #0088FF;
   border-radius: 4px;
+}
+
+.support-section a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+.support-section a:hover {
+  text-decoration: underline;
+}
+
+/* Fontes */
+.sources-section {
+  background-color: #0d0e17;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 2px solid #0055ff;
+}
+
+.sources-section h2 {
+  color: #FFD700;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.source-card {
+  background-color: #161722;
+  border: 1px solid #2a2b3d;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tag-source {
+  background-color: #0055ff;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  align-self: flex-start;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+.source-card h3 {
+  font-size: 1.1rem;
+  color: #FF6600;
+  margin-bottom: 0.5rem;
+}
+
+.source-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.source-card a {
+  color: #FFD700;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.source-card a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
