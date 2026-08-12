@@ -1,4 +1,23 @@
-// --- 1. PORTAL DE ESCUTA (DESABAFO SIMULADO) ---
+// --- 1. BOTÃO DE VOLTAR AO TOPO ---
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+window.addEventListener('scroll', () => {
+  // Exibe o botão quando rolar mais de 300px
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// --- 2. PORTAL DE ESCUTA (DESABAFO SIMULADO) ---
 const ventForm = document.getElementById('ventForm');
 const ventText = document.getElementById('ventText');
 const responseBox = document.getElementById('responseBox');
@@ -19,11 +38,10 @@ if (ventForm) {
   });
 }
 
-// --- 2. QUIZ INTERATIVO (5 PERGUNTAS) ---
+// --- 3. QUIZ INTERATIVO (5 PERGUNTAS) ---
 const quizForm = document.getElementById('quizForm');
 const quizResult = document.getElementById('quizResult');
 
-// Respostas corretas
 const correctAnswers = {
   q1: "A",
   q2: "B",
@@ -39,7 +57,6 @@ if (quizForm) {
     let score = 0;
     const totalQuestions = 5;
 
-    // Obtém as respostas selecionadas pelo usuário
     const formData = new FormData(quizForm);
 
     for (let [question, answer] of formData.entries()) {
@@ -48,7 +65,6 @@ if (quizForm) {
       }
     }
 
-    // Exibe o resultado final
     quizResult.innerHTML = `
       🏆 Resultado do Quiz:<br>
       Você acertou <strong>${score}</strong> de <strong>${totalQuestions}</strong> perguntas! <br>
@@ -59,7 +75,7 @@ if (quizForm) {
   });
 }
 
-// --- 3. GENKI DAMA INTERATIVA ---
+// --- 4. GENKI DAMA INTERATIVA ---
 let count = 0;
 
 const powerBtn = document.getElementById('powerBtn');
